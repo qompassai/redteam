@@ -4,6 +4,7 @@
 
 # Red Team/Penetration Testing Educational Repository
 ![Repository Views](https://komarev.com/ghpvc/?username=qompassai-redteam)
+![GitHub all releases](https://img.shields.io/github/downloads/qompassai/redteam/total?style=flat-square)
  <a href="https://www.kali.org/docs/">
   <img src="https://img.shields.io/badge/Kali_Documentation-blue?style=flat-square" alt="Kali Linux Documentation">
 </a>
