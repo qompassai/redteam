@@ -1,7 +1,12 @@
-patreon: mmxdev
+# ~/FUNDING.yml
+# -------------
+# Copyright (C) 2025 Qompass AI, All rights reserved
+github: phaedrusflow
+liberapay: qompassai
+patreon: qompassai
+open_collective: qompassai
 custom:
   [
-    "https://boosty.to/mmxdev",
-    "https://pay.cloudtips.ru/p/7b3e9d65",
-    "https://yoomoney.ru/fundraise/XA49mgQLPA0.221209",
+    "https://www.buymeacoffee.com/phaedrusflow",
+    "https://monero.com/donate/?address=42HGspSFJQ4MjM5ZusAiKZj9JZWhfNgVraKb1eGCsHoC6QJqpo2ERCBZDhhKfByVjECernQ6KeZwFcnq8hVwTTnD8v4PzyH",
   ]
