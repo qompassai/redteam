@@ -1,0 +1,34 @@
+\usepackage{graphicx}
+\usepackage[x11names]{xcolor}
+
+% easy code typesetting
+\usepackage{minted}
+
+% get rid of warnings
+\usepackage{scrhack}
+
+
+% hyperref without ugly boxes around links
+\usepackage[pdfusetitle]{hyperref}
+\hypersetup{
+  colorlinks = true,
+  urlcolor   = [rgb]{0.06, 0.15, 0.58},
+  citecolor  = [rgb]{0.06, 0.15, 0.58},
+  linkcolor  = black
+}
+
+% enhanced tables
+\usepackage{tabularx}
+
+% parsing parameters
+\usepackage{pgfkeys}
+
+% boxes and icons
+\usepackage[many]{tcolorbox}
+\usepackage{fontawesome5}
+
+% headers and footers
+\usepackage{scrlayer-scrpage}
+
+\input{macros/cvss/cvss}
+\input{macros/misc}
