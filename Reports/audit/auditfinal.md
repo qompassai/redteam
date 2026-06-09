@@ -1,4 +1,13 @@
-<h2> Security Azimuth Check </h2>
+<h2 style="text-align:center; margin-bottom:0.75rem;">Security Azimuth Check</h2>
+
+<div style="text-align:center; margin:0 0 1rem 0;">
+  <img src="./azimuth.png"
+       alt="Security Azimuth logo"
+       style="display:block; margin:0 auto; width:164px; height:auto; border-radius:24px; box-shadow:0 14px 30px rgba(15,23,42,0.7);" />
+</div>
+
+<div class="audit-wrap">
+  <div class="audit-card audit-hero" style="position:relative; overflow:hidden; padding:2rem 2rem 1.5rem; border:1px solid #233044; border-radius:22px; background:linear-gradient(145deg, #0b1220 0%, #111a2e 52%, #0e1627 100%); box-shadow:0 18px 40px rgba(2,6,23,.28); color:#e5eefb;">
 
 <div class="audit-wrap">
   <div class="audit-card audit-hero" style="position:relative; overflow:hidden; padding:2rem 2rem 1.5rem; border:1px solid #233044; border-radius:22px; background:linear-gradient(145deg, #0b1220 0%, #111a2e 52%, #0e1627 100%); box-shadow:0 18px 40px rgba(2,6,23,.28); color:#e5eefb;">
@@ -7,12 +16,7 @@
     <div class="audit-eyebrow" style="display:inline-block; padding:.35rem .7rem; border:1px solid rgba(148,163,184,.25); border-radius:999px; background:rgba(15,23,42,.35); color:#93c5fd; font-size:.78rem; letter-spacing:.08em; text-transform:uppercase;">Objective review artifact</div>
     <h1 class="audit-title" style="margin:.85rem 0 .55rem; font-size:2.1rem; line-height:1.08; letter-spacing:-.03em; color:#f8fbff;">Review of Current Homelab Security Plan</h1>
     <p class="audit-text" style="max-width:60rem; margin:0 0 1rem; color:#cbd5e1; font-size:1rem; line-height:1.7;">This review evaluates the current plan described by <code style="padding:.15rem .4rem; border-radius:.45rem; background:rgba(148,163,184,.14); color:#e2e8f0;">Redacted</code> against recognized security frameworks and standards, using the National Institute of Standards and Technology (NIST) Cybersecurity Framework (CSF) 2.0 as the primary lens and the Center for Internet Security (CIS) Controls v8 as the control catalog, with emphasis on segmentation, access control, monitoring, protocol handling, and documented assurance. The review is intentionally evidence-oriented and separates architectural strengths from unsupported claims, missing controls, and areas where reviewer-specific comments should be added.</p>
-     <div aria-hidden="true" style="display:flex; justify-content:center; margin:1.25rem 0 1.1rem;">
-      <img src="./azimuth.png"
-           alt="Security Azimuth logo"
-           style="width:164px; height:auto; border-radius:24px; box-shadow:0 14px 30px rgba(15,23,42,0.7);" />
-    </div>
-    <div class="audit-badges" style="display:flex; flex-wrap:wrap; gap:.55rem;">
+     <div class="audit-badges" style="display:flex; flex-wrap:wrap; gap:.55rem; justify-content:center;">
       <span class="audit-badge primary" style="padding:.45rem .75rem; border-radius:999px; background:#0f766e; color:#ecfeff; border:1px solid rgba(255,255,255,.08);">Disposition: Revise and strengthen</span>
       <span class="audit-badge ok" style="padding:.45rem .75rem; border-radius:999px; background:#14532d; color:#f0fdf4; border:1px solid rgba(255,255,255,.08);">Strongest area: Network segmentation</span>
       <span class="audit-badge warn" style="padding:.45rem .75rem; border-radius:999px; background:#7c2d12; color:#fff7ed; border:1px solid rgba(255,255,255,.08);">Weakest area: Validation evidence</span>
@@ -22,8 +26,8 @@
     </div>
   </div>
 
-  <details class="audit-details">
-    <summary><strong>Rating methodology reference</strong></summary>
+  <details class="audit-details" style="max-width:1100px; margin:1rem auto 0;">
+    <summary style="text-align:center;"><strong>Rating methodology reference</strong></summary>
 
 | Rating area | Scale used | Meaning | Source |
 |---|---|---|---|
@@ -98,7 +102,7 @@
 ```
 
 <details>
-  <summary><strong>Framework-based scorecard</strong></summary>
+  <summary style="text-align:center;"><strong>Framework-based scorecard</strong></summary>
 
   <h2 class="audit-section-title">Framework-based scorecard</h2>
   <div class="audit-scorecard">
@@ -131,7 +135,7 @@
 </details>
 
 <details>
-  <summary><strong>Objective control mapping</strong></summary>
+  <summary style="text-align:center;"><strong>Objective control mapping</strong></summary>
 
   <h2 class="audit-section-title">Objective control mapping</h2>
 
@@ -151,7 +155,7 @@
 </details>
 
 <details>
-  <summary><strong>Strengths</strong></summary>
+  <summary style="text-align:center;"><strong>Strengths</strong></summary>
 
   <h2 class="audit-section-title">Observed strengths</h2>
   <div class="audit-list">
@@ -179,7 +183,7 @@
 </details>
 
 <details>
-  <summary><strong>Weaknesses</strong></summary>
+  <summary style="text-align:center;"><strong>Weaknesses</strong></summary>
 
   <h2 class="audit-section-title">Recommended corrections</h2>
   <p class="audit-text">Each card below includes an inline reviewer comment area intended as a working space for future reviewers to capture environment-specific notes and decisions.</p>
@@ -213,7 +217,7 @@
 </details>
 
 <details>
-  <summary><strong>Recommended objective metrics</strong></summary>
+  <summary style="text-align:center;"><strong>Recommended objective metrics</strong></summary>
 
   <h2 class="audit-section-title">Recommended objective metrics</h2>
 
@@ -232,7 +236,7 @@
 </details>
 
 <details>
-  <summary><strong>Standards and reference corrections</strong></summary>
+  <summary style="text-align:center;"><strong>Standards and reference corrections</strong></summary>
 
   <h2 class="audit-section-title">Standards and reference corrections</h2>
   <div class="audit-list">
@@ -337,12 +341,12 @@
 ```
 
 <details>
-  <summary><strong>Example documented configuration profiles</strong></summary>
+  <summary style="text-align:center;"><strong>Example documented configuration profiles</strong></summary>
 
   <p>These example configuration profiles are not drop-in templates, but documented baselines showing how this homelab could be aligned with the segmentation and detection intent described earlier. They should be adapted to the actual interfaces, VLAN names, rulesets, and policy objects used in production.</p>
 
   <details>
-    <summary><strong>Zenarmor documented policy profile</strong></summary>
+    <summary style="text-align:center;"><strong>Zenarmor documented policy profile</strong></summary>
 
 ```yaml
 # Zenarmor policy baseline (documented configuration profile)
@@ -461,7 +465,7 @@ maintenance:
   </details>
 
   <details>
-    <summary><strong>Suricata example configuration</strong></summary>
+    <summary style="text-align:center;"><strong>Suricata example configuration</strong></summary>
 
 ```yaml
 # /etc/suricata/suricata.yaml
