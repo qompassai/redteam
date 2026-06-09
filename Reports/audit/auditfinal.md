@@ -1,4 +1,4 @@
-# Security Azimuth Check
+<h2> Security Azimuth Check </h2>
 
 <div class="audit-wrap">
   <div class="audit-card audit-hero" style="position:relative; overflow:hidden; padding:2rem 2rem 1.5rem; border:1px solid #233044; border-radius:22px; background:linear-gradient(145deg, #0b1220 0%, #111a2e 52%, #0e1627 100%); box-shadow:0 18px 40px rgba(2,6,23,.28); color:#e5eefb;">
@@ -6,28 +6,11 @@
     <div style="position:absolute; inset:auto -70px -70px auto; width:240px; height:240px; border-radius:999px; background:radial-gradient(circle, rgba(34,197,94,.12) 0%, rgba(34,197,94,0) 72%);"></div>
     <div class="audit-eyebrow" style="display:inline-block; padding:.35rem .7rem; border:1px solid rgba(148,163,184,.25); border-radius:999px; background:rgba(15,23,42,.35); color:#93c5fd; font-size:.78rem; letter-spacing:.08em; text-transform:uppercase;">Objective review artifact</div>
     <h1 class="audit-title" style="margin:.85rem 0 .55rem; font-size:2.1rem; line-height:1.08; letter-spacing:-.03em; color:#f8fbff;">Review of Current Homelab Security Plan</h1>
-    <p class="audit-text" style="max-width:60rem; margin:0 0 1rem; color:#cbd5e1; font-size:1rem; line-height:1.7;">This review evaluates the current plan described by <code style="padding:.15rem .4rem; border-radius:.45rem; background:rgba(148,163,184,.14); color:#e2e8f0;">Trevor Lougy</code> against recognized security frameworks and standards, using the National Institute of Standards and Technology (NIST) Cybersecurity Framework (CSF) 2.0 as the primary lens and the Center for Internet Security (CIS) Controls v8 as the control catalog, with emphasis on segmentation, access control, monitoring, protocol handling, and documented assurance. The review is intentionally evidence-oriented and separates architectural strengths from unsupported claims, missing controls, and areas where reviewer-specific comments should be added.</p>
-    <div aria-hidden="true" style="display:flex; justify-content:center; margin:1.25rem 0 1.1rem;">
-      <svg width="164" height="164" viewBox="0 0 164 164" fill="none" xmlns="http://www.w3.org/2000/svg" role="img">
-        <defs>
-          <linearGradient id="shieldGlow" x1="24" y1="20" x2="140" y2="146" gradientUnits="userSpaceOnUse">
-            <stop offset="0" stop-color="#67e8f9"/>
-            <stop offset="0.5" stop-color="#60a5fa"/>
-            <stop offset="1" stop-color="#34d399"/>
-          </linearGradient>
-          <linearGradient id="shieldInner" x1="82" y1="30" x2="82" y2="136" gradientUnits="userSpaceOnUse">
-            <stop offset="0" stop-color="rgba(255,255,255,0.22)"/>
-            <stop offset="1" stop-color="rgba(255,255,255,0.04)"/>
-          </linearGradient>
-        </defs>
-        <circle cx="82" cy="82" r="62" stroke="rgba(148,163,184,0.18)" stroke-width="1.5" stroke-dasharray="4 8"/>
-        <circle cx="82" cy="82" r="46" stroke="rgba(103,232,249,0.18)" stroke-width="1.5"/>
-        <path d="M82 24L122 40V73C122 98 106 120 82 132C58 120 42 98 42 73V40L82 24Z" fill="url(#shieldInner)" stroke="url(#shieldGlow)" stroke-width="3"/>
-        <path d="M82 47L101 55V72C101 86 93 99 82 106C71 99 63 86 63 72V55L82 47Z" fill="rgba(96,165,250,0.12)" stroke="rgba(191,219,254,0.55)" stroke-width="2"/>
-        <path d="M82 60V94" stroke="#e0f2fe" stroke-width="4" stroke-linecap="round"/>
-        <path d="M70 77H94" stroke="#e0f2fe" stroke-width="4" stroke-linecap="round"/>
-        <path d="M38 122C49 108 64 100 82 100C100 100 115 108 126 122" stroke="rgba(103,232,249,0.45)" stroke-width="2.5" stroke-linecap="round"/>
-      </svg>
+    <p class="audit-text" style="max-width:60rem; margin:0 0 1rem; color:#cbd5e1; font-size:1rem; line-height:1.7;">This review evaluates the current plan described by <code style="padding:.15rem .4rem; border-radius:.45rem; background:rgba(148,163,184,.14); color:#e2e8f0;">Redacted</code> against recognized security frameworks and standards, using the National Institute of Standards and Technology (NIST) Cybersecurity Framework (CSF) 2.0 as the primary lens and the Center for Internet Security (CIS) Controls v8 as the control catalog, with emphasis on segmentation, access control, monitoring, protocol handling, and documented assurance. The review is intentionally evidence-oriented and separates architectural strengths from unsupported claims, missing controls, and areas where reviewer-specific comments should be added.</p>
+     <div aria-hidden="true" style="display:flex; justify-content:center; margin:1.25rem 0 1.1rem;">
+      <img src="./azimuth.png"
+           alt="Security Azimuth logo"
+           style="width:164px; height:auto; border-radius:24px; box-shadow:0 14px 30px rgba(15,23,42,0.7);" />
     </div>
     <div class="audit-badges" style="display:flex; flex-wrap:wrap; gap:.55rem;">
       <span class="audit-badge primary" style="padding:.45rem .75rem; border-radius:999px; background:#0f766e; color:#ecfeff; border:1px solid rgba(255,255,255,.08);">Disposition: Revise and strengthen</span>
