@@ -120,22 +120,19 @@
 
   <h2 class="audit-section-title">Objective control mapping</h2>
 
-| Plan element | Observed strength
-| Objective weakness
-|
-Recommendation |
+| Plan element | Observed strength | Objective weakness | Recommendation |
 |---|---|---|---|
-| Dual 10G physical separation for trusted vs. DMZ traffic | Strong boundary separation concept that reduces accidental mixing of trust zones.  | The report does not show interface diagrams, switchport assignments, or verification that traffic cannot bypass intended separation.  | Add deployment-specific notes here. |
-| VLAN segmentation into management, trusted, private servers, DMZ, and IoT/guest | Good segmentation pattern consistent with reducing lateral movement and scoping exposure.  | No rule matrix, inter-VLAN flow table, or validation test results are shown. There is also no asset inventory tied to each VLAN.  | Add VLAN-specific findings here. |
-| RFC1918-based internal block rules | Good default-deny intent for IPv4 internal traffic between zones.  | RFC 1918 applies to IPv4 private space only, so the report must clearly separate IPv4 logic from IPv6 logic and show rule parity.  | Add IPv4 rule review notes here. |
-| Admin device alias for management access | Better than broad subnet trust because it narrows privileged access to named systems.  | IP-based trust is not the same as identity assurance; no MFA, device health, certificate trust, or admin session controls are documented.  | Add admin-plane concerns here. |
-| Native LAN lock to network hardware alias | Strong anti-misuse idea for untagged infrastructure ports.  | The report does not prove port-security behavior, switch configuration, or what happens during switch replacement, emergency maintenance, or mispatching.  | Add switch and port validation notes here. |
-| DMZ to private-server micro-allowlisting | Strongest control in the writeup because it scopes cross-zone exposure to named application paths.  | No service dependency map, allowed-port inventory, or validation test is included, and no host-layer hardening is documented for the allowlisted targets.  | Add service-path review notes here. |
-| Forced DNS via NAT redirect on port 53 | Useful for traditional DNS control and policy enforcement.  | The report does not discuss DNS over HTTPS, DNS over TLS, QUIC-based bypass paths, or how exceptions are detected and blocked.  | Add DNS bypass observations here. |
-| IPv6 ULA with NAT66 | Shows awareness that IPv6 must be governed explicitly and separately.  | The report should justify NAT66 operationally, define policy parity with IPv4, and explain residual risks and tradeoffs.  | Add IPv6 architecture notes here. |
-| Zenarmor NGFW on internal interfaces | Adds application visibility and policy depth beyond port-level filtering.  | No evidence is shown for policy sets, exception handling, update cadence, or how detection output feeds response.  | Add DPI policy notes here. |
-| Suricata IPS on WAN/DMZ edge | Appropriate perimeter detection and block control for exposed services.  | No description of ruleset source, tuning, alert fatigue handling, or packet-drop validation is provided.  | Add IPS tuning notes here. |
-| GeoIP restrictions on WAN forwards | Can reduce opportunistic scan exposure.  | GeoIP is only a coarse filter; it is not identity, and it is bypassable through VPNs, proxies, and cloud egress regions. The report overstates its effect with “99%” language without measurement evidence.  | Add exposure-reduction notes here. |
+| Dual 10G physical separation for trusted vs. DMZ traffic | Strong boundary separation concept that reduces accidental mixing of trust zones. | The report does not show interface diagrams, switchport assignments, or verification that traffic cannot bypass intended separation. | Add deployment-specific notes here. |
+| VLAN segmentation into management, trusted, private servers, DMZ, and IoT/guest | Good segmentation pattern consistent with reducing lateral movement and scoping exposure. | No rule matrix, inter-VLAN flow table, or validation test results are shown. There is also no asset inventory tied to each VLAN. | Add VLAN-specific findings here. |
+| RFC1918-based internal block rules | Good default-deny intent for IPv4 internal traffic between zones. | RFC 1918 applies to IPv4 private space only, so the report must clearly separate IPv4 logic from IPv6 logic and show rule parity. | Add IPv4 rule review notes here. |
+| Admin device alias for management access | Better than broad subnet trust because it narrows privileged access to named systems. | IP-based trust is not the same as identity assurance; no MFA, device health, certificate trust, or admin session controls are documented. | Add admin-plane concerns here. |
+| Native LAN lock to network hardware alias | Strong anti-misuse idea for untagged infrastructure ports. | The report does not prove port-security behavior, switch configuration, or what happens during switch replacement, emergency maintenance, or mispatching. | Add switch and port validation notes here. |
+| DMZ to private-server micro-allowlisting | Strongest control in the writeup because it scopes cross-zone exposure to named application paths. | No service dependency map, allowed-port inventory, or validation test is included, and no host-layer hardening is documented for the allowlisted targets. | Add service-path review notes here. |
+| Forced DNS via NAT redirect on port 53 | Useful for traditional DNS control and policy enforcement. | The report does not discuss DNS over HTTPS, DNS over TLS, QUIC-based bypass paths, or how exceptions are detected and blocked. | Add DNS bypass observations here. |
+| IPv6 ULA with NAT66 | Shows awareness that IPv6 must be governed explicitly and separately. | The report should justify NAT66 operationally, define policy parity with IPv4, and explain residual risks and tradeoffs. | Add IPv6 architecture notes here. |
+| Zenarmor NGFW on internal interfaces | Adds application visibility and policy depth beyond port-level filtering. | No evidence is shown for policy sets, exception handling, update cadence, or how detection output feeds response. | Add DPI policy notes here. |
+| Suricata IPS on WAN/DMZ edge | Appropriate perimeter detection and block control for exposed services. | No description of ruleset source, tuning, alert fatigue handling, or packet-drop validation is provided. | Add IPS tuning notes here. |
+| GeoIP restrictions on WAN forwards | Can reduce opportunistic scan exposure. | GeoIP is only a coarse filter; it is not identity, and it is bypassable through VPNs, proxies, and cloud egress regions. The report overstates its effect with “99%” language without measurement evidence. | Add exposure-reduction notes here. |
 
   <h2 class="audit-section-title">Strengths</h2>
   <div class="audit-list">
