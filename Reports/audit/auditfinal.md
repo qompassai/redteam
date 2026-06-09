@@ -1,6 +1,6 @@
 <h2 style="text-align:center; margin-bottom:0.75rem;">Security Azimuth Check</h2>
 
-<div style="text-align:center; margin:0 0 1rem 0;">
+<div style="display:flex; justify-content:center; align-items:center; width:100%; margin:0 0 1rem 0;">
   <img src="./azimuth.png"
        alt="Security Azimuth logo"
        style="display:block; margin:0 auto; width:164px; height:auto; border-radius:24px; box-shadow:0 14px 30px rgba(15,23,42,0.7);" />
