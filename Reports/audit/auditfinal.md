@@ -1,10 +1,8 @@
-<h2 style="text-align:center; margin-bottom:0.75rem;">Security Azimuth Check</h2>
+<h2 align="center">Security Azimuth Check</h2>
 
-<div style="display:flex; justify-content:center; align-items:center; width:100%; margin:0 0 1rem 0;">
-  <img src="./azimuth.png"
-       alt="Security Azimuth logo"
-       style="width:164px; height:auto; border-radius:24px; box-shadow:0 14px 30px rgba(15,23,42,0.7);" />
-</div>
+<p align="center">
+  <img src="./azimuth.png" alt="Security Azimuth logo" width="164" />
+</p>
 
 <div class="audit-wrap">
   <div class="audit-card audit-hero" style="position:relative; overflow:hidden; padding:2rem 2rem 1.5rem; border:1px solid #233044; border-radius:22px; background:linear-gradient(145deg, #0b1220 0%, #111a2e 52%, #0e1627 100%); box-shadow:0 18px 40px rgba(2,6,23,.28); color:#e5eefb;">
