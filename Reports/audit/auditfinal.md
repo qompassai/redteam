@@ -13,15 +13,17 @@
     <div style="position:absolute; inset:auto -70px -70px auto; width:240px; height:240px; border-radius:999px; background:radial-gradient(circle, rgba(34,197,94,.12) 0%, rgba(34,197,94,0) 72%);"></div>
     <h1 class="audit-title" style="margin:.85rem 0 .55rem; font-size:2.1rem; line-height:1.08; letter-spacing:-.03em; color:#f8fbff;">Review of Current Homelab Security Plan</h1>
     <p class="audit-text" style="max-width:60rem; margin:0 0 1rem; color:#cbd5e1; font-size:1rem; line-height:1.7;">This review evaluates the current plan described by <code style="padding:.15rem .4rem; border-radius:.45rem; background:rgba(148,163,184,.14); color:#e2e8f0;">Redacted</code> against recognized security frameworks and standards, using the National Institute of Standards and Technology (NIST) Cybersecurity Framework (CSF) 2.0 as the primary lens and the Center for Internet Security (CIS) Controls v8 as the control catalog, with emphasis on segmentation, access control, monitoring, protocol handling, and documented assurance. The review is intentionally evidence-oriented and separates architectural strengths from unsupported claims, missing controls, and areas where reviewer-specific comments should be added.</p>
-     <div class="audit-badges" style="display:flex; flex-wrap:wrap; gap:.55rem; justify-content:center;">
-      <span class="audit-badge primary" style="padding:.45rem .75rem; border-radius:999px; background:#0f766e; color:#ecfeff; border:1px solid rgba(255,255,255,.08);">Disposition: Revise and strengthen</span>
-      <span class="audit-badge ok" style="padding:.45rem .75rem; border-radius:999px; background:#14532d; color:#f0fdf4; border:1px solid rgba(255,255,255,.08);">Strongest area: Network segmentation</span>
-      <span class="audit-badge warn" style="padding:.45rem .75rem; border-radius:999px; background:#7c2d12; color:#fff7ed; border:1px solid rgba(255,255,255,.08);">Weakest area: Validation evidence</span>
-      <span class="audit-badge" style="padding:.45rem .75rem; border-radius:999px; background:rgba(30,41,59,.9); color:#dbeafe; border:1px solid rgba(148,163,184,.22);">Framework lens: NIST CSF 2.0</span>
-      <span class="audit-badge" style="padding:.45rem .75rem; border-radius:999px; background:rgba(30,41,59,.9); color:#dbeafe; border:1px solid rgba(148,163,184,.22);">Control lens: CIS Controls v8</span>
-      <span class="audit-badge" style="padding:.45rem .75rem; border-radius:999px; background:rgba(30,41,59,.9); color:#dbeafe; border:1px solid rgba(148,163,184,.22);">Protocol refs: RFC 1918 / RFC 4193</span>
-    </div>
-  </div>
+    <div style="display:flex; justify-content:center; margin-top:1rem;">
+  <ul style="margin:0; padding-left:1.25rem; max-width:760px; color:#dbe7f5; text-align:left; line-height:1.8;">
+    <li><strong>Disposition:</strong> Revise and strengthen</li>
+    <li><strong>Strongest area:</strong> Network segmentation</li>
+    <li><strong>Weakest area:</strong> Validation evidence</li>
+    <li><strong>Framework lens:</strong> NIST CSF 2.0</li>
+    <li><strong>Control lens:</strong> CIS Controls v8</li>
+    <li><strong>Protocol refs:</strong> RFC 1918 / RFC 4193</li>
+  </ul>
+</div>
+</div>
 
   <details class="audit-details" style="max-width:1100px; margin:1rem auto 0;">
     <summary style="text-align:center;"><strong>Rating methodology reference</strong></summary>
