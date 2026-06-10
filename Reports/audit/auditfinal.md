@@ -161,22 +161,24 @@
     <div class="audit-card">
       <strong>1. Segmentation is intentional rather than cosmetic.</strong>
       <p>The current plan separates management, user, server, public, and untrusted device roles into distinct zones instead of relying on a single flat network. That is a concrete architectural strength because it supports narrower trust boundaries and better scoping of access rules.</p>
-      <details><summary>Recommendation</summary><textarea>This segmentation model is a strong foundation for homelab security. For this environment, keep the current zone layout (management, user, server, DMZ, IoT/guest), but make sure each zone has: (1) a clearly documented IP range, (2) explicit inter-zone rules in a matrix, and (3) one or two validation tests showing that traffic cannot bypass the intended boundaries. This will turn a good design idea into a verifiable control.</textarea></details>
+      <details><summary>Recommendation</summary>
+<p>This segmentation model is a strong foundation for homelab security. For this environment, keep the current zone layout (management, user, server, DMZ, IoT/guest), but make sure each zone has: (1) a clearly documented IP range, (2) explicit inter-zone rules in a matrix, and (3) one or two validation tests showing that traffic cannot bypass the intended boundaries. This will turn a good design idea into a verifiable control.</p>
+</details>
     </div>
     <div class="audit-card">
       <strong>2. The plan uses default-deny thinking for east-west traffic.</strong>
       <p>The described RFC 1918 block model and application-specific exceptions reflect a genuine least-privilege mindset for lateral movement reduction. This is one of the strongest parts of the current plan.</p>
-      <details><summary>Recommendation</summary><textarea>The default-deny approach for east-west traffic is one of the most valuable controls in this design. To preserve that strength over time, keep a small, reviewed list of explicit allow rules per VLAN pair, and add a short justification for each. Consider scheduling a quarterly review where you remove stale exceptions and re-test that blocked paths are still blocked.</textarea></details>
+      <details><summary>Recommendation</summary><p>The default-deny approach for east-west traffic is one of the most valuable controls in this design. To preserve that strength over time, keep a small, reviewed list of explicit allow rules per VLAN pair, and add a short justification for each. Consider scheduling a quarterly review where you remove stale exceptions and re-test that blocked paths are still blocked.</p></details>
     </div>
     <div class="audit-card">
       <strong>3. The plan recognizes IPv6 as a separate policy domain.</strong>
       <p>Many otherwise competent network writeups ignore IPv6 entirely; this one does not. The explicit treatment of Unique Local Address (ULA) space and IPv6 rule intent is a meaningful strength even though the documentation still needs refinement.</p>
-      <details><summary>Recommendation</summary><textarea>Treating IPv6 as a first-class policy domain is a major differentiator from typical homelabs. To build on this, maintain side-by-side IPv4 and IPv6 rule intent for each zone, such as a simple table showing what is allowed over version 4 and version 6. Make sure every new rule is evaluated for both families so you do not accidentally create an IPv6 back door for flows that are blocked over IPv4.</textarea></details>
+      <details><summary>Recommendation</summary><p>Treating IPv6 as a first-class policy domain is a major differentiator from typical homelabs. To build on this, maintain side-by-side IPv4 and IPv6 rule intent for each zone, such as a simple table showing what is allowed over version 4 and version 6. Make sure every new rule is evaluated for both families so you do not accidentally create an IPv6 back door for flows that are blocked over IPv4.</p></details>
     </div>
     <div class="audit-card">
       <strong>4. Public-service exposure is narrowed through multiple layers.</strong>
       <p>The DMZ design, micro-allowlisting, IPS, and GeoIP filtering show that exposure control is layered rather than dependent on a single port-forward decision. That layered approach is directionally strong.</p>
-      <details><summary>Recommendation</summary><textarea>For the next revision, document each exposed service as a discrete access path rather than as a general DMZ concept. For every public-facing application, list: (1) the public hostname or entry point, (2) the reverse proxy or DMZ host that receives the request, (3) the exact backend service and port it is allowed to reach, (4) the authentication or access control applied at the edge, and (5) the log source that records successful and denied access. A small service-dependency map and one validation test per exposed service would make this section much easier to review and would show that public exposure remains intentionally narrow as the environment evolves.</textarea></details>
+      <details><summary>Recommendation</summary><p>For the next revision, document each exposed service as a discrete access path rather than as a general DMZ concept. For every public-facing application, list: (1) the public hostname or entry point, (2) the reverse proxy or DMZ host that receives the request, (3) the exact backend service and port it is allowed to reach, (4) the authentication or access control applied at the edge, and (5) the log source that records successful and denied access. A small service-dependency map and one validation test per exposed service would make this section much easier to review and would show that public exposure remains intentionally narrow as the environment evolves.</p></details>
     </div>
   </div>
 </details>
@@ -190,27 +192,27 @@
     <div class="audit-card">
       <strong>1. The report overstates assurance relative to evidence.</strong>
       <p>The document frequently claims outcomes such as trapping attackers, eliminating exposure, or stopping compromise, but it does not include proof artifacts to support those outcomes. Audit-quality language must tie claims to tests, logs, diagrams, or measured results.</p>
-      <details><summary>Recommendation</summary><textarea>Please replace broad outcome claims such as “stops attackers,” “physically traps,” or “eliminates exposure” with statements tied to specific evidence. For each major control, attach or reference at least one concrete artifact: a diagram, rule export, test result, log snippet, or packet capture. The goal is for a third party to see not just what is intended, but what has actually been verified in this environment.</textarea></details>
+      <details><summary>Recommendation</summary><p>Please replace broad outcome claims such as “stops attackers,” “physically traps,” or “eliminates exposure” with statements tied to specific evidence. For each major control, attach or reference at least one concrete artifact: a diagram, rule export, test result, log snippet, or packet capture. The goal is for a third party to see not just what is intended, but what has actually been verified in this environment.</p></details>
     </div>
     <div class="audit-card">
       <strong>2. Identity and privileged access controls are under-documented.</strong>
       <p>The current plan treats administrative devices as privileged based on IP assignment, but it does not show stronger management controls such as MFA, certificate-bound access, Privileged Access Management (PAM) policy, separate administrative workflows, or management-plane session assurance.</p>
-      <details><summary>Recommendation</summary><textarea>The current writeup focuses on which IPs can reach management interfaces, but it does not yet show how administrator identity is verified or how privileged sessions are governed. Please add detail on: (1) which accounts can administer the firewall, hypervisor, and key servers; (2) where Multi-Factor Authentication (MFA) is enforced; (3) whether Secure Shell (SSH) keys or certificates are used instead of passwords and, if so, which non-deprecated key exchange and signature algorithms are in use (for example, alternatives to rsa2048 such as sntrup761/x25519, as described in [RFC 9941](https://datatracker.ietf.org/doc/rfc9941/) and [RFC 9941 summary](https://www.rfc-editor.org/info/rfc9941/)); and (4) how administrative actions are logged and reviewed. This will bring the access model closer to least privilege rather than trust by IP address alone. The goal is to both show and tell: document the design and back it with observable evidence.</textarea></details>
+      <details><summary>Recommendation</summary><p>The current writeup focuses on which IPs can reach management interfaces, but it does not yet show how administrator identity is verified or how privileged sessions are governed. Please add detail on: (1) which accounts can administer the firewall, hypervisor, and key servers; (2) where Multi-Factor Authentication (MFA) is enforced; (3) whether Secure Shell (SSH) keys or certificates are used instead of passwords and, if so, which non-deprecated key exchange and signature algorithms are in use (for example, alternatives to rsa2048 such as sntrup761/x25519, as described in [RFC 9941](https://datatracker.ietf.org/doc/rfc9941/) and [RFC 9941 summary](https://www.rfc-editor.org/info/rfc9941/)); and (4) how administrative actions are logged and reviewed. This will bring the access model closer to least privilege rather than trust by IP address alone. The goal is to both show and tell: document the design and back it with observable evidence.</p></details>
     </div>
     <div class="audit-card">
       <strong>3. Host and workload hardening are mostly absent from the writeup.</strong>
       <p>The report is strong on network policy but thin on endpoint, container, virtual machine (VM), and host-layer hardening. There is no visible discussion of patching cadence, endpoint detection and response (EDR), file integrity monitoring, secure boot, kernel hardening, or workload isolation assumptions.</p>
-      <details><summary>Recommendation</summary><textarea>Network policy is well developed, but the host and workload layer is under-documented. For the next revision, please describe: (1) the patching approach and frequency for hosts, containers, and appliances; (2) which hardening baselines or controls you apply, such as AppArmor, Security-Enhanced Linux (SELinux), minimal packages, and Secure Shell (SSH) hardening; and (3) how you separate high-risk services, such as lab workloads or internet-facing applications, from more sensitive data-bearing systems. This ensures the inside of each segment is as defensible as the boundaries.</textarea></details>
+      <details><summary>Recommendation</summary><p>Network policy is well developed, but the host and workload layer is under-documented. For the next revision, please describe: (1) the patching approach and frequency for hosts, containers, and appliances; (2) which hardening baselines or controls you apply, such as AppArmor, Security-Enhanced Linux (SELinux), minimal packages, and Secure Shell (SSH) hardening; and (3) how you separate high-risk services, such as lab workloads or internet-facing applications, from more sensitive data-bearing systems. This ensures the inside of each segment is as defensible as the boundaries.</p></details>
     </div>
     <div class="audit-card">
       <strong>4. Detection controls are described, but response workflow is not.</strong>
       <p>The writeup names Suricata and Zenarmor, but it does not explain where alerts go, who reviews them, how often they are triaged, what constitutes a false positive, or how incidents are handled after detection.</p>
-      <details><summary>Recommendation</summary><textarea>The plan needs to show how detections move from “alert exists” to “action taken.” Please add a short description or diagram of: (1) where alerts and logs from these tools go; (2) who reviews them and how often; (3) how real issues are distinguished from noise; and (4) what happens when a suspicious event is confirmed, such as blocking a flow, isolating a host, or collecting evidence. Even a simple homelab-sized response workflow will strengthen this section.</textarea></details>
+      <details><summary>Recommendation</summary><p>The plan needs to show how detections move from “alert exists” to “action taken.” Please add a short description or diagram of: (1) where alerts and logs from these tools go; (2) who reviews them and how often; (3) how real issues are distinguished from noise; and (4) what happens when a suspicious event is confirmed, such as blocking a flow, isolating a host, or collecting evidence. Even a simple homelab-sized response workflow will strengthen this section.</p></details>
     </div>
     <div class="audit-card">
       <strong>5. Several claims need narrower and more accurate wording.</strong>
       <p>Phrases like “physically trapped,” “violently drops,” “God Mode,” and “99%” read as charged language rather than audit language. The report should describe control function, scope, and limitations in neutral terms with a lexicon that reflects deep understanding of recognized standards.</p>
-      <details><summary>Recommendation</summary><textarea> Please revise promotional or visceral language into neutral, scoped descriptions such as “contained within the VLAN,” “denies and logs traffic that does not match allow rules,” “administrative access,” or “reduces unsolicited traffic from disallowed regions.” Where you include numbers such as percentages or coverage, tie them to an actual measurement rather than an estimate. This will make the report more credible because the evidence, not the tone, carries the argument.</textarea></details>
+      <details><summary>Recommendation</summary><p> Please revise promotional or visceral language into neutral, scoped descriptions such as “contained within the VLAN,” “denies and logs traffic that does not match allow rules,” “administrative access,” or “reduces unsolicited traffic from disallowed regions.” Where you include numbers such as percentages or coverage, tie them to an actual measurement rather than an estimate. This will make the report more credible because the evidence, not the tone, carries the argument.</p></details>
     </div>
   </div>
 </details>
@@ -242,17 +244,17 @@
     <div class="audit-card">
       <strong>RFC 1918 usage</strong>
       <p>Use RFC 1918 only when referring to the IPv4 private ranges 10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16. Do not use it as shorthand for all internal addressing or as an IPv6 concept.</p>
-      <details><summary>Recommendation</summary><textarea>In this environment, please be explicit whenever you mean “IPv4 RFC 1918 private space” versus “internal addresses in general.” Where you talk about internal routing, Access Control Lists (ACLs), or block rules, call out whether they apply only to 10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16 or also to public or other internal ranges. This will make it easier for a reviewer to see exactly which traffic is covered and avoid confusion when IPv6 or public IP space is introduced later.</textarea></details>
+      <details><summary>Recommendation</summary><p>In this environment, please be explicit whenever you mean “IPv4 RFC 1918 private space” versus “internal addresses in general.” Where you talk about internal routing, Access Control Lists (ACLs), or block rules, call out whether they apply only to 10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16 or also to public or other internal ranges. This will make it easier for a reviewer to see exactly which traffic is covered and avoid confusion when IPv6 or public IP space is introduced later.</p></details>
     </div>
     <div class="audit-card">
       <strong>IPv6 ULA usage</strong>
       <p>Use RFC 4193 when discussing Unique Local Addresses (ULAs) for IPv6. If NAT66 remains part of the design, explain the operational reason for it, the tradeoffs, and how policy consistency is maintained across IPv4 and IPv6.</p>
-      <details><summary>Recommendation</summary><textarea>For the next revision, please include a short IPv6 addressing plan describing which prefixes are used per VLAN and whether Unique Local Addresses (ULAs) and Global Unicast Addresses (GUAs) are present. Also include a one-paragraph rationale for using ULA space and any NAT66 constructs. The goal is to show that IPv6 policy is deliberately designed and that firewall rules, DNS behavior, and logging are consistent with the IPv4 model rather than bolted on as an afterthought.</textarea></details>
+      <details><summary>Recommendation</summary><p>For the next revision, please include a short IPv6 addressing plan describing which prefixes are used per VLAN and whether Unique Local Addresses (ULAs) and Global Unicast Addresses (GUAs) are present. Also include a one-paragraph rationale for using ULA space and any NAT66 constructs. The goal is to show that IPv6 policy is deliberately designed and that firewall rules, DNS behavior, and logging are consistent with the IPv4 model rather than bolted on as an afterthought.</p></details>
     </div>
     <div class="audit-card">
       <strong>Compliance wording</strong>
       <p>Do not imply Federal Information Processing Standards (FIPS), NIST, or similar compliance from architecture quality alone. If a compliance-adjacent term is used, it should be tied to a defined control, a documented requirement, and supporting evidence.</p>
-      <details><summary>Recommendation</summary><textarea>When you reference frameworks or standards such as FIPS, RFC, NIST, or CIS, please treat them as lenses rather than badges. For each such mention, either point to a specific control you believe you satisfy or soften the language to “aligned with” or “informed by” instead of implying formal compliance. This will keep the report accurate for a homelab context while still signaling good practice.</textarea></details>
+      <details><summary>Recommendation</summary><p>When you reference frameworks or standards such as FIPS, RFC, NIST, or CIS, please treat them as lenses rather than badges. For each such mention, either point to a specific control you believe you satisfy or soften the language to “aligned with” or “informed by” instead of implying formal compliance. This will keep the report accurate for a homelab context while still signaling good practice.</p></details>
     </div>
   </div>
 
@@ -582,6 +584,96 @@ threshold gen_id 1, sig_id 2001219, type both, track by_src, count 5, seconds 60
 ```
 
   </details>
+</details>
+
+<details>
+  <summary style="text-align:center;"><strong>Linux kernel / modprobe hardening profile</strong></summary>
+
+```conf
+# /etc/modprobe.d/homelab-hardening.conf
+# Kernel module restrictions for homelab gateways/servers
+
+# 1) Block rarely used, high‑risk filesystems
+blacklist cramfs
+blacklist freevxfs
+blacklist jffs2
+blacklist hfs
+blacklist hfsplus
+blacklist squashfs
+blacklist udf
+
+# 2) Block legacy network protocols not needed in this homelab
+blacklist dccp
+blacklist sctp
+blacklist rds
+blacklist tipc
+
+# 3) Block USB storage on systems that should never boot from or
+#    copy config to removable media (e.g., firewall, core router)
+blacklist usb_storage
+
+# 4) Prevent module autoloading from userspace (systemd style)
+#    For critical systems that should not load new modules at runtime
+#    (validate before enabling on anything that uses DKMS/ZFS/etc.)
+install cramfs /bin/false
+install freevxfs /bin/false
+install jffs2 /bin/false
+install hfs /bin/false
+install hfsplus /bin/false
+install squashfs /bin/false
+install udf /bin/false
+install dccp /bin/false
+install sctp /bin/false
+install rds /bin/false
+install tipc /bin/false
+install usb_storage /bin/false
+```
+
+```conf
+# /etc/sysctl.d/99-homelab-hardening.conf
+# Network and memory‑safety related kernel tunables
+
+# 1) Basic IP spoofing and scan noise reduction
+net.ipv4.conf.all.rp_filter = 1
+net.ipv4.conf.default.rp_filter = 1
+net.ipv4.tcp_syncookies = 1
+net.ipv4.conf.all.accept_source_route = 0
+net.ipv4.conf.default.accept_source_route = 0
+net.ipv4.conf.all.accept_redirects = 0
+net.ipv4.conf.default.accept_redirects = 0
+net.ipv4.conf.all.send_redirects = 0
+net.ipv4.conf.default.send_redirects = 0
+
+# 2) IPv6: keep consistent with the segmentation model
+net.ipv6.conf.all.accept_redirects = 0
+net.ipv6.conf.default.accept_redirects = 0
+net.ipv6.conf.all.accept_ra = 0
+net.ipv6.conf.default.accept_ra = 0
+
+# 3) Harder to abuse low ports / ephemeral ports
+net.ipv4.ip_local_port_range = 2000 65000
+
+# 4) Shared memory & pointer exposure
+kernel.randomize_va_space = 2
+kernel.kptr_restrict = 2
+kernel.dmesg_restrict = 1
+
+# 5) Restrict core dumps on sensitive systems
+fs.suid_dumpable = 0
+kernel.core_uses_pid = 1
+```
+
+```text
+# Validation notes 
+# - After deploying modprobe config:
+#     sudo modprobe cramfs   # should fail
+#     sudo modprobe dccp     # should fail
+# - After deploying sysctl config:
+#     sudo sysctl -p /etc/sysctl.d/99-homelab-hardening.conf
+#     sudo sysctl net.ipv4.conf.all.rp_filter   # confirm = 1
+#     sudo sysctl kernel.kptr_restrict          # confirm = 2
+```
+
 </details>
 
   </div>
