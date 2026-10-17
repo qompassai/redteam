@@ -112,15 +112,16 @@ def test_latex_report_input_graph_resolves() -> None:
     assert _validate_tex_inputs(main_tex) == []
 
 
-# Vendored BlackArch script with a genuine syntax error: in
-# baconflict's check_files, the brace group "{ list_db_files /
-# list_file_files }" puts the closing brace on the same line as
-# the last command with no ';' separator, so bash reads it as an
-# argument and the group never closes — the script cannot run
-# as shipped. Exact-set accounting, like the lock file in NUR:
-# fixing it upstream (or here, on Matt's word) turns this red
-# until the set is updated.
-KNOWN_UNPARSEABLE_SCRIPTS = {'baconflict'}
+# Vendored BlackArch scripts with genuine syntax errors, by exact-set
+# accounting (like the lock file in NUR). baconflict shipped with an
+# unclosed brace group in check_files ("list_file_files }" — no ';'
+# before the closing brace); Matt approved a minimal local patch on
+# 2026-10-16 (Decision 7), so the set is now empty. DIVERGENCE: the
+# local baconflict differs from upstream BlackArch by exactly that one
+# ';'. If upstream fixes it, the vendored copy can be re-synced
+# verbatim. Any new unparseable script turns this red until it is
+# accounted here.
+KNOWN_UNPARSEABLE_SCRIPTS = set()
 
 
 def test_blackarch_scripts_parse() -> None:
